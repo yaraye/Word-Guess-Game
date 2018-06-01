@@ -1,33 +1,20 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Word-Guess-Game</title>
+    <title>Hangman_Game</title>
     <link href="https://fonts.googleapis.com/css?family=Calligraffitti" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
 integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
 crossorigin="anonymous">
    <link rel="stylesheet" type="text/css" href= "assets/css/style.css"/>
-    <script src="assets/javascript/game.js"></script>
+   <script type="text/javascript" scr="assets/javascript/game.js"></script>
+  
 </head>
 <body>
 
-    <!-- Press any key to get started!
-
-6. Wins: (# of times user guessed the word correctly).
-
-   * If the word is `madonna`, display it like this when the game starts: `_ _ _ _ _ _ _`.
-
-   * As the user guesses the correct letters, reveal them: `m a d o _  _ a`.
-
-7. Number of Guesses Remaining: (# of guesses remaining for the user).
-
-8. Letters Already Guessed: (Letters the user has guessed, displayed like `L Z Y H`).
-
-9. After the user wins/loses the game should automatically choose another word and make the user play it.
--->
 <div id="div1">
         <div id="div2">
             <h1>Hangman</h1></div>
@@ -35,8 +22,6 @@ crossorigin="anonymous">
             <h2> Rock & Roll </h2>
           </div>
         </div>
-    
-
 
 <div class="row">
        
@@ -44,26 +29,30 @@ crossorigin="anonymous">
       <img src="assets/images/Background_Calm_River.jpg">
     </div>
     <div  id="box2" class="col-sm-6">
-        <div>
-                <h3>Press Any Key To Get started</h3>
-        </div>
-        <br>
+        
+    <h3>Press Any Key To Get started</h3>
         <div id="win">
-            <p> wins</p>
+            <p> wins:</p>
         </div>
-        <br>
-        <div id="cword">
+
+        <div id="losses">
+            <p>Losses:</p>
+         </div>
+       
+        <div id="cwords">
             <p>Current Word</p>
         </div>
-        <div id="aarray"></div>
-        <br>
+       
         <div id="gleft">
             <p>Number of Guesses Left</p>
         </div>
-        
-        <br>
+       
         <div id="guessed">
             <p>Letter Already Guessed</p>
+        </div>
+
+        <div id="rword">
+            <p>Right Letter Word</p>
         </div>
         
        
@@ -72,22 +61,9 @@ crossorigin="anonymous">
 </div>
 
    
- <!---<h1>Press any key to get started!</h1>
-
-    <h2> Wins:</h2>
-    <div id="wins"></div>
-
-    <h2>Losses:</h2>
-    <div id="losses"></div>
-
-    <h2>Number of guesses Remaining:</h2>
-    <div id="number of guesses remaining"></div>
-
-    <h2>Letter Already Guessed:</h2>
-    <div id="lettersAlreadyGuesed"></div>-->
-
+ 
 </div>
 </div>
-
+ 
 </body>
 </html>
