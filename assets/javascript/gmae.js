@@ -38,9 +38,20 @@ function StartGame()
 
 }
 
+ //checkRepeat: 
+ function checkRepeat()
+ {
+	var repeatCounter = -1;
+	for (var i=0; i < letterAlreadyGuessed.length; i++){
+		if (currentWords == letterAlreadyGuessed[i]){
+			repeatCounter++;
+		}
+	}
+}
+
+
 function CompareLetter(word)
 {
-
   letterAlreadyGuessed.push(word);
   document.querySelector("#guessed").innerHTML = letterAlreadyGuessed.join(" ");
   var correctGuess = false;
@@ -59,7 +70,6 @@ function CompareLetter(word)
 
   }
 
-
   if(correctGuess == false)
   {
 	  numberOfGuesesLeft--;
@@ -68,39 +78,29 @@ function CompareLetter(word)
 
   if(numberOfGuesesLeft == 0)
   {
-  	losses++;
+	guessesLeft=9;
+    letterAlreadyGuessed=" ";
+    losses++;
   	document.querySelector("#losses").innerHTML = losses;
   }
+  
 
   if(rightLetterCount == 0)
   {
-  	wins++;
+	wins++;
+	guessesLeft=9;
+    letterAlreadyGuessed=" ";
 	  document.querySelector("#wins").innerHTML = wins;
-	
 
-	  // Updates the image depending on how many guesses
- function Image() {
-    document.getElementById("box1").src = "assets/images/" + (numberOfGuesesLeft) + ".png";
-};
   }
 
 }
 
-//  Updates the display on the HTML Page
-function updateDisplay()
- {
-    document.querySelector("#rwords").innerHTML = rightLetterCount;
 
-};
 
 StartGame();
 document.onkeydown = function(event) {
 	
-    // If we finished a game, dump one keystroke and reset.
-    if(correctGuess) {
-        resetGame();
-        var correctGuess = true;
-    } else {
 		if(event.keyCode >= 65 && event.keyCode <= 90)
 			{
 				var letter = String.fromCharCode(event.keyCode).toLowerCase();
@@ -108,14 +108,3 @@ document.onkeydown = function(event) {
 				CompareLetter(letter);
 			}
     }
-};
-
-// document.onkeyup = function(event){
-
-// 	if(event.keyCode >= 65 && event.keyCode <= 90)
-// 	{
-// 		var letter = String.fromCharCode(event.keyCode).toLowerCase();
-// 		//console.log(letter);
-// 		CompareLetter(letter);
-// 	}
-// 	}
