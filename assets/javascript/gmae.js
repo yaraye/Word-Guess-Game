@@ -1,6 +1,6 @@
 
 //declearing variable and assigning the variable 
-var secretWords=["lightmyfire","peoplearestrange", "lovestreet", "indiansummer"];
+var secretWords=["fivetoone","ghostsong","lawoman","theend","touchme","gloria","lovestreet"];
 
 //global var
 var wins = 0;
@@ -52,7 +52,8 @@ function CompareLetter(word)
   		correctGuess = true;
   		currentWords[i] = word;
   		document.querySelector("#cwords").innerHTML = currentWords.join(" ");
-  		rightLetterCount--;
+		rightLetterCount--;
+		 
   		
   	}
 
@@ -61,7 +62,8 @@ function CompareLetter(word)
 
   if(correctGuess == false)
   {
-  	numberOfGuesesLeft--;
+	  numberOfGuesesLeft--;
+	  document.querySelector("#gleft").innerHTML=numberOfGuesesLeft;
   }
 
   if(numberOfGuesesLeft == 0)
@@ -73,18 +75,47 @@ function CompareLetter(word)
   if(rightLetterCount == 0)
   {
   	wins++;
-  	document.querySelector("#wins").innerHTML = wins;
+	  document.querySelector("#wins").innerHTML = wins;
+	
+
+	  // Updates the image depending on how many guesses
+ function Image() {
+    document.getElementById("box1").src = "assets/images/" + (numberOfGuesesLeft) + ".png";
+};
   }
 
 }
 
-StartGame();
-document.onkeyup = function(event){
+//  Updates the display on the HTML Page
+function updateDisplay()
+ {
+    document.querySelector("#rwords").innerHTML = rightLetterCount;
 
-	if(event.keyCode >= 65 && event.keyCode <= 90)
-	{
-		var letter = String.fromCharCode(event.keyCode).toLowerCase();
-		//console.log(letter);
-		CompareLetter(letter);
-	}
-	}
+};
+
+StartGame();
+document.onkeydown = function(event) {
+	
+    // If we finished a game, dump one keystroke and reset.
+    if(correctGuess) {
+        resetGame();
+        var correctGuess = true;
+    } else {
+		if(event.keyCode >= 65 && event.keyCode <= 90)
+			{
+				var letter = String.fromCharCode(event.keyCode).toLowerCase();
+				//console.log(letter);
+				CompareLetter(letter);
+			}
+    }
+};
+
+// document.onkeyup = function(event){
+
+// 	if(event.keyCode >= 65 && event.keyCode <= 90)
+// 	{
+// 		var letter = String.fromCharCode(event.keyCode).toLowerCase();
+// 		//console.log(letter);
+// 		CompareLetter(letter);
+// 	}
+// 	}
