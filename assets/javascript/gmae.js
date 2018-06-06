@@ -12,10 +12,6 @@
 //if user guesschange goes to zero he loses, reset game
 
 
-
-
-
-
 //declearing variable and assigning the variable 
 var secretWords=["fivetoone","ghostsong","lawoman","theend","touchme","gloria","lovestreet"];
 
@@ -42,8 +38,8 @@ function StartGame()
 
 
 	rightLetterCount = pickOneWord.length;
-	console.log(pickOneWord);
-	console.log(rightLetterCount);
+	//console.log(pickOneWord);
+	//console.log(rightLetterCount);
 	
 	//reset values
 	numberOfGuesesLeft = 9;
@@ -91,14 +87,11 @@ function CompareLetter(letter)
   		currentWords[i] = letter;
 		  document.querySelector("#cwords").innerHTML = currentWords.join(" ");
 		  
-		rightLetterCount--;
-		 
+		rightLetterCount--;	 
   		
   	}
 
   }
-
-  alert(rightLetterCount);
 
   if(correctGuess == false)
   {
@@ -157,7 +150,6 @@ document.onkeydown = function(event) {
 					alert("You already typed this letter");
 					return;
 				}
-
 				//console.log(letter);
 				CompareLetter(letter);
 			}

@@ -1,6 +1,8 @@
 body {
+    color: whitesmoke;
+   /* background-image: url("../images/Background_Calm_River.jpg");*/
+    background-size: 100%;
     background: black;
-    color: aliceblue;
 }
 .row {
     position: absolute;
@@ -14,7 +16,7 @@ body {
 }
 
 #box1, #box2 {
-    border: 3px dotted green;
+    border: 5px  dotted green;
     height: 400px;
     width: 250px;  
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -50,14 +52,18 @@ h2{
     margin-left:50px;
     margin-top: 0%; 
     font-family: cursive;
-    text-shadow: 2px 3px 2px orchid;
+    text-shadow: 2px 3px 2px rgb(42, 187, 126);
+    color: white;
+    font-weight: bold;
+
 }
 h1{
     font-weight: 300px;
     font-size: 150px;
-    text-shadow:  10px 10px 5px lightseagreen;
+    text-shadow: 2px 13px 2px rgb(42, 187, 126);
     letter-spacing: 10px;
-    
+    color: white;
+    font-weight: bold;
 
     
 }
